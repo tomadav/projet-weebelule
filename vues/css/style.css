@@ -1,23 +1,12 @@
-/*balise title en hover*/
-
-
-/*#title:hover  {
-    color: white;
-    position: relative;
-  
-    text-shadow: 3px 3px 3px black;
-    text-decoration: none;
-}*/
-/*
-
-.title {
-    position:absolute;
-    z-index:1000;
-    margin-left: 13%;
-    text-decoration: none;
-    font-size: x-large;
+html, body, .block {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
 }
-*/
+
+
 
 span.roll {
 	background:url(../img/Search-icon.png) center center no-repeat #000;
@@ -30,10 +19,6 @@ span.roll {
 	box-shadow: 0px 0px 4px  #000; 
 }
 
-html{
-    font-family: 'Roboto', sans-serif;
-}
-
 .first {
     position: relative;
     width: 100%;
@@ -42,8 +27,12 @@ html{
 .weeb {
     text-align: center;
     width : 100%;
-    background: #5cb85c;
-    border-color: #5cb85c;
+    box-shadow: 0px 0px 20px black;
+    background: white;
+}
+
+.weeb:hover {
+  text-decoration: none;
 }
 
 .image {
@@ -87,9 +76,6 @@ html{
     border-radius: 3px;
 }
 
-
-
-
 .navbar {
     margin-bottom: 50px;
     border-radius: 5px;
@@ -112,7 +98,6 @@ html{
 
 /***************** navbar ****************/
 .navbar-brand{
-    width : 100;
     display: flex;
     height: auto;
 }
@@ -142,63 +127,12 @@ footer {
 [class*="col"] { margin-bottom: 20px; }
 img { width: 100%; }
 
-/*
-div {
-border: 1px solid red;
-}
 
-body {
-width: 100%;
-font-size: 12px;
-background-image: url(../img/stock-vector-icons-differences-visual-game-task-find-differences-solution-in-hidden-layer-vector-file-154809998.jpg);
-}
-
-#body-fond{
-background-color: rgba(255, 255, 255, .9);
-margin-top : 100px;
-height : 700px;
-border-radius: 50px;
-}
-
-body, html {
-height: 100%;
-}
-
-header{
-background: #84b418;
-}
-
-[class*="col"] { margin-bottom: 20px; }
-img { width: 100%; }
-
-#logo {
-height : 250px;
-width: auto;
-display: block;
-margin-left: auto;
-margin-right: auto;
-}
-*/
 
 
 /****************Page de Garde******************/
 
-/*
-body, html {
-background: blue;
-}
 
-#body-fond{
-background-color: rgba(255, 255, 255, 1);
-margin-top : 100px;
-border-radius: 50px;
-}
-*/
-
-body{
-    width: 100%;
-    background-image: url(../img/back.jpg);
-}
 
 h1 {
     text-align: center;
@@ -261,42 +195,27 @@ h1 {
     transform: scale(1.2);
 }
 
-/*
-h2 {
-color: #fff;
-}
-*/
 
-/****************PAGE ACCUEIL*****************/
-
-/*
-#aside-left {
-width: 60px;
-float: left;
-margin-top: 100px;
+.positionNav {
+    padding-top: 7rem;
 }
 
-#aside-right {
-float: right;
-height: 100%;
+.glyphicon-log-in {
+    font-size: 2rem;
+    padding-right: 
 }
 
-.kiki {
-margin-top: 100px;
+.positionBloc {
+    margin-bottom: 3rem;
 }
 
-#categorie {}
-*/
+.imageFond {
+    position: absolute;
+    z-index: -500;
+    width: 100%;
+    height: 100%;
+}
 
-/******************FOOTER*********************/
-/*
-footer {
-background-color: #0099cc;
-color: #ffffff;
-text-align: center;
-font-size: 12px;
-padding: 15px;
-bottom: 0;
-position: fixed;
-width: 100%;
-}*/
+footer{
+    z-index: 10;
+}

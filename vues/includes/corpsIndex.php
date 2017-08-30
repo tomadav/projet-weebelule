@@ -1,26 +1,3 @@
-<!DOCTYPE HTML>
-
-<html lang="fr">
-
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <title>Weebelule - Le troc responsable</title>
-    </head>
-
-
-
-    <body>
-        <!-- Ici commence le logo du site-->
-        <div id="body-fond" class="container">
-            
-            <div>
-                <img id="logo" src="img/troc2.png" alt="logo du site weebelule" class="responsive">
-            
 <!--            <h1>Le site d'échanges</h1>-->
 
             </div>
@@ -47,7 +24,7 @@
                         <div>
                             <div class="circle-text" id="wam2">
                                 <div>
-                                    <a href="accueil2.html"  title="aller sur la page accueil"><span class="glyphicon glyphicon-home" id="accueil"></span>
+                                    <a href="accueil.php"  title="aller sur la page accueil"><span class="glyphicon glyphicon-home" id="accueil"></span>
                                         <p>Entrer</p>
                                     </a>
                                 </div>
@@ -73,10 +50,3 @@
 
             </main>
         </div>
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <script src="js/script.js"></script>
-    </body>
-
-</html>

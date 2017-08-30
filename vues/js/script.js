@@ -22,24 +22,38 @@
 // }
 
 $(function() {
-// OPACITY OF BUTTON SET TO 0%
-$(".roll").css("opacity","0");
- 
-// ON MOUSE OVER
-$(".roll").hover(function () {
- 
-// SET OPACITY TO 70%
-$(this).stop().animate({
-opacity: .7
-}, "slow");
-},
- 
-// ON MOUSE OUT
-function () {
- 
-// SET OPACITY BACK TO 50%
-$(this).stop().animate({
-opacity: 0
-}, "slow");
+    // OPACITY OF BUTTON SET TO 0%
+    $(".roll").css("opacity","0");
+
+    // ON MOUSE OVER
+    $(".roll").hover(function () {
+
+        // SET OPACITY TO 70%
+        $(this).stop().animate({
+            opacity: .7
+        }, "slow");
+    },
+
+                     // ON MOUSE OUT
+                     function () {
+
+        // SET OPACITY BACK TO 50%
+        $(this).stop().animate({
+            opacity: 0
+        }, "slow");
+    });
 });
-});
+
+
+
+$('a').hover(
+    function(){
+        $(this).css('opacity','.7');
+
+        $(this).parent().append('<div class="title">' + a + '</div>');
+    },
+    function(){
+        $(this).css('opacity','1');
+        $(this).next().remove('.title');
+    }
+);
