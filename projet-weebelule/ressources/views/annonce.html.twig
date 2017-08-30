@@ -8,18 +8,18 @@
 
 {% block contenu %}
 <div class="row">
-    <div class="col-xs-6 col-xs-push-3">
-        <h2 class="text-center">Publie ton annonce</h2 >
+    <div class="col-xs-6 col-xs-push-3" name="container">
+        <h2 class="text-center">Publier son annonce</h2 >
         <form action="{{ path ('weebelule_annonce_post') }}" class="form-horizontal" method="post">
 
             <!-- Titre de l'Annonce et Catégorie -->
             <div class="form-group">
-                <div class="col-xs-6">
+                <div class="col-xs-12">
                     <label for="titre">Titre</label>
                     <input id="titre" name="TITREANNONCE" required class="form-control"
                         type="text" placeholder="Titre de l'annonce">
                 </div>
-                <div class="col-xs-6">
+                <div class="col-xs-12">
                     <label for="categorie_annonce">Catégories</label>
                     <select id="categorie_annonce" name="LIBELLECATEGORIE" required class="form-control" placeholder="catégorie">
                     <optgroup label="MATÉRIEL">
@@ -78,43 +78,89 @@
             </div>
 
             <div class="form-group">
-              <div class="col-xs-6">
+              <div class="col-xs-12">
                 <label for="prix">Valeur(en Weebs)</label>
                 <input id="prix" name="" required class="form-control" type="text" value="0" >
-                <p class="help-block"> Tapes 0 si tu le donnes gratuitement </p>
+                <p class="help-block">0 si vous le donnez gratuitement </p>
               </div>
-              <div class="col-xs-6">
-                <label for="description">Description</label>
-                <textarea class="form-control" id="description" height="1" placeholder="Décris-nous ce que tu proposes..."></textarea>
-            </div>
-            <div class="form-group">
               <div class="col-xs-12">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" height="1" placeholder="Description de la proposition..."></textarea>
+            </div>
+          </div>
+            <div class="form-group">
+              <div class="col-xs-6">
               <label for="address">Adresse</label>
-              <input id="adress" name="ADRESSEUSER" required class="form-control" type="text" placeholder="Lieu de l'échange"
+              <input id="adress" name="ADRESSEUSER" required class="form-control" type="text" placeholder="Lieu de l'échange">
               </div>
               <!-- Placer l'Api Google Maps et ajouter potentiellement 2 champs lattitude et longitude -->
+            </div>
+            <div class="form-group" name="ajout_images">
+
               <div class="col-xs-12">
+
+
                 <div id="feat_image">
                   <label class="control-label" for="edit-field-category-und"> Image Principale </label>
                   <div id="featIMG" class="option_item">
                     <div class="my-account-author-image">
                       <img class="author-avatar" src="" alt="">
+
+
                     </div>
-                    <span class="full-width-button">
-                      <a class="upload-feat-image" href="#">
+                    <div class="full-width-button">
+
+                        <a class="upload-feat-image" href="#">
                         <i class="fa fa-cloud-upload"></i>
+                        <label for="icone">
                         Télécharger une nouvelle image
+                        </label>
                       </a>
-                    </span>
-                  </div>
+                      <input type="file" class="" name="icone" id="icone" />
+                    </div>
+                    <br>
+                    <div class="button_del_feat_image full-width-button">
+                      <a href="" accesskey="&H74">
+                      <i class="fa fa-trash-o"></i>
+                      Effacer l'image (F5)
+                      </a>
+                    </div>
+                  </div> <!--fin featIMG-->
+
+
+
+                    <div id="images_criteria">
+                      <label for="edit-field-category-und" class="control-label">Autres Photos</label>
+                    </div>
+                    <fieldset class="input-full-width">
+                      <button id="submit_add_image" class="button-secondary" type="button" name="submit_add_image" value="add">
+                        <i class="fa fa-plus-circle"></i>
+                        Ajouter une image
+                      </button>
+                    </fieldset>
+                    <script>//pas fonctionnel
+                    $(document).ready(function($){
+    $('#submit_add_image').click(function(e){
+        var copie = $('#featIMG').clone();
+        copie.find('.full-width-button').html('icone');
+        copie.find('.button_del_feat_image').html('rouge').css('color', 'red');
+        copie.appendTo('body');
+    });
+});
+
+                    </script>
+                  </div> <!--fin feat_image-->
                 </div>
-              </div>
+              </div> <!--fin ajout_images-->
+            </div> <!-- fin container-->
+
+          <div class="col-xs-12" name="cadrage_button">
+            <div class="col-xs-5"></div>
+            <div class="col-xs-2">
+              <input type="submit" class="btn btn-block btn-primary" value="Publier">
             </div>
-
-
-            <input type="submit" class="btn btn-block btn-primary" value="Publier">
-
+            <div class="col-xs-5"></div>
+          </div> <!-- fin cadrage_button-->
         </form>
-    </div>
-</div>
+</div> <!--fin div class row-->
 {% endblock %}

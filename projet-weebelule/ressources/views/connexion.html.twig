@@ -6,14 +6,14 @@
 {# Fil d'Ariane #}
 
 {% set active = 'connexion' %}
-
+{% set error = 'in' %}
 {# Block de Contenu défini dans base.html.twig #}
 {% block contenu %}
     <!-- .row>.col-xs-6.col-xs-push-3 -->
     <div class="row">
         <div class="col-xs-6 col-xs-push-3">
             <h2 class="text-center">Connexion</h2 >
-{% set error = '' %}
+
             {% if error == true %}
                 <div class="alert alert-danger">
                     <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
@@ -29,7 +29,7 @@
                 </div>
             {% endif %}
 
-            <form action="{{ url('weebelule_connexion') }}" class="form-horizontal" method="post">
+            <form action="{{ url('weebelule_connexion_get') }}" class="form-horizontal" method="post">
 
                 <!-- Email et Mot de Passe -->
                 <div class="form-group">
