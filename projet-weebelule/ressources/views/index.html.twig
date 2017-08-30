@@ -5,12 +5,16 @@
 
 {# Block de Contenu défini dans base.html.twig #}
 {% block contenu %}
-        
+
         <div class="container">
             <div class="starter-template">
                 <h1>{{ message }}</h1>
                 <p class="lead">Use this document as a way to quickly start any new project.</p>
             </div>
+            {% include 'connexion.html.twig' %}
+            <div class="btn btn-success">
+              <a href="{{ url('weebelule_annonce_post') }}">Publies ton Annonce !</a>
+            </div>
         </div><!-- /.container -->
-    
+
 {% endblock %}
