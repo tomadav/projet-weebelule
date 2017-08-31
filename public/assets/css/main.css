@@ -1,0 +1,36 @@
+﻿
+/*==========Setting=========*/
+
+body {
+  padding-top: 50px;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: none; }
+
+a {
+  color: inherit; }
+
+a:active, a:focus {
+  text-decoration: none;
+  color: inherit; }
+
+img {
+  max-width: 100%; }
+
+p {
+  font-size: 13px; }
+
+ul, li {
+  padding: 0px;
+  list-style: none;
+  margin: 0px; }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.4;
+  font-family: "Roboto Slab", serif; }

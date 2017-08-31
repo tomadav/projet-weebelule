@@ -36,7 +36,7 @@
                         <div>
                             <div class="circle-text" id="wam2">
                                 <div>
-                                    <a href="#"  title="login"><span class="ion-android-person" id="connexion"></span>
+                                    <a href="PageConnexion.php"  title="login"><span class="ion-android-person" id="connexion"></span>
                                         <p>Connexion</p>
                                     </a>
                                 </div>
