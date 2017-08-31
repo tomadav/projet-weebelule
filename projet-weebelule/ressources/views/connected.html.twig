@@ -9,5 +9,23 @@
 
 {# Block de Contenu défini dans base.html.twig #}
 {% block contenu %}
+<div class="col-xs-5">
+
+</div>
   <div class="btn btn-success"> Félicitations vous êtes connecté </div>
+
+
+              {% if error == true %}
+                  <div class="alert alert-danger">
+                      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                      {{ error | replace({"Bad credentials." : " Identifiants et/ou mot de passe incorrect."}) }}
+                  </div>
+              {% endif %}
+              {% if global.request.get('inscription') == 'success' %}
+                  <div class="alert alert-success">
+                      <p><i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                      Félicitation, votre inscription est effective.
+                          <br>Vous pouvez maintenant vous connecter.</p>
+                  </div>
+              {% endif %}
 {% endblock %}

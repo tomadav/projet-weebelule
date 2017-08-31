@@ -132,12 +132,40 @@
                     <div id="images_criteria">
                       <label for="edit-field-category-und" class="control-label">Autres Photos</label>
                     </div>
-                    <fieldset class="input-full-width">
-                      <button id="submit_add_image" class="button-secondary" type="button" name="submit_add_image" value="add">
-                        <i class="fa fa-plus-circle"></i>
-                        Ajouter une image
-                      </button>
-                    </fieldset>
+                    <div class="full-width-button">
+
+                        <a class="upload-feat-image" href="#">
+                        <i class="fa fa-cloud-upload"></i>
+                        <label for="icone">
+                        Télécharger une nouvelle image
+                        </label>
+                      </a>
+                      <input type="file" class="" name="icone" id="icone" />
+                    </div>
+                    <br>
+                    <div class="button_del_feat_image full-width-button">
+                      <a href="" accesskey="&H74">
+                      <i class="fa fa-trash-o"></i>
+                      Effacer l'image (F5)
+                      </a>
+                    </div>
+                    <div class="full-width-button">
+
+                        <a class="upload-feat-image" href="#">
+                        <i class="fa fa-cloud-upload"></i>
+                        <label for="icone">
+                        Télécharger une nouvelle image
+                        </label>
+                      </a>
+                      <input type="file" class="" name="icone" id="icone" />
+                    </div>
+                    <br>
+                    <div class="button_del_feat_image full-width-button">
+                      <a href="" accesskey="&H74">
+                      <i class="fa fa-trash-o"></i>
+                      Effacer l'image (F5)
+                      </a>
+                    </div>
                     <script>//pas fonctionnel
                     $(document).ready(function($){
     $('#submit_add_image').click(function(e){
@@ -163,4 +191,13 @@
           </div> <!-- fin cadrage_button-->
         </form>
 </div> <!--fin div class row-->
+{% endblock %}
+{% block javascripts %}
+
+{{ parent() }}
+<script src="//cdn.ckeditor.com/4.7.2/standard/ckeditor.js"></script>
+<script type="text/javascript">
+CKEDITOR.replace('description')
+
+</script>
 {% endblock %}

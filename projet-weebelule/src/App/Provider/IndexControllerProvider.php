@@ -20,7 +20,8 @@ class IndexControllerProvider implements ControllerProviderInterface {
             # Page d'Accueil
             $controllers
                 # On associe une Route à un Controller et une Action
-                ->get('/', 'App\Controller\IndexController::indexAction')
+                ->match('/', 'App\Controller\IndexController::indexAction')
+                ->method('GET|POST')
                 # En option je peux donner un nom à la route, qui servira plus tard
                 # pour la créations de lien : "controller_action"
                 ->bind('home');
@@ -37,18 +38,15 @@ class IndexControllerProvider implements ControllerProviderInterface {
                   ->post('/inscription','App\Controller\IndexController::inscriptionPost')
                   ->bind('weebelule_inscription_post');
 
-            # Page de connexion
-            $controllers
-                # On associe une Route à un Controller et une Action
-                ->get('/connexion', 'App\Controller\IndexController::connexionAction')
-                # En option je peux donner un nom à la route, qui servira plus tard
-                # pour la créations de lien : "controller_action"
-                ->bind('weebelule_connexion');
+          
+          $controllers
+              ->get('/deconnexion', 'App\Controller\IndexController::deconnexionAction')
+              ->bind('weebelule_deconnexion');
 
-                $controllers
-                  ->post('/connexion','App\Controller\IndexController::connexionGet')
-                  ->bind('weebelule_connexion_get');
-
+          #  Page de CGU
+          $controllers
+                ->get('/cgu', 'App\Controller\IndexController::cguAction')
+                ->bind('weebelule_cgu');
 
             # Page de publication d'Annonce
             $controllers

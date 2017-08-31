@@ -3,6 +3,12 @@ namespace App\Controller;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class IndexController
 {
@@ -10,15 +16,73 @@ class IndexController
      * Affichage de la Page d'Accueil
      * @return Symfony\Component\HttpFoundation\Response;
      */
-    public function indexAction(Application $app) {
+    public function indexAction(Application $app, Request $request){
 
-        # Déclaration d'un Message
-        $message = 'Mon Application Silex !';
+          $form = $app['form.factory']->createBuilder(FormType::class)
+          ->add('EMAILUSER', EmailType::class, [
+              'required'      =>  true,
+              'label'         =>  false,
+              'constraints'   =>  array(new NotBlank()),
+              'attr'          =>  [
+                  'class'         => 'form-control',
+                  'placeholder'   => 'Saisissez votre email',
+                  'autocomplete'  => 'new-password'
+                ]
+          ])
+          ->add('MDPUSER', PasswordType::class, [
+              'required'      =>  true,
+              'label'         =>  false,
+              'constraints'   =>  array(new NotBlank()),
+              'attr'          =>  [
+                  'class'         => 'form-control',
+                  'placeholder'   => '***',
+                  'autocomplete'  => 'new-password'
+              ]
+          ])
+          ->add('submit', SubmitType::class, [
+              'label'     => 'Connexion',
+              'attr'      =>  [
+                  'class'     => 'btn btn-block btn-primary'
+              ]
+          ])
+          ->getForm();
 
-        # Affichage dans la Vue
-        return $app['twig']->render('index.html.twig',[
-            'message'  => $message
-        ]);
+          $form->handleRequest($request);
+
+          if($form->isValid()) :
+
+              $admin = $form->getData();
+
+              $isMailInDb = $app['idiorm.db']->for_table('user')
+              ->where(array(
+                  'EMAILUSER'     => $admin['EMAILUSER'],
+                  'MDPUSER'  => $app['security.encoder.digest']->encodePassword($admin['MDPUSER'], '')
+                  ))
+              ->find_one();
+                    if(!$isMailInDb) :
+
+                    return $app['twig']->render('index.html.twig', [
+                      'form'      => $form->createView(),
+                      'error'     => 'Identifiant et/ou mot de passe incorrect !'
+                    ]);
+                    // return print_r($isMailInDb);
+                    else :
+                      return $app['twig']->render('connected.html.twig',[
+                        'form'    => $form->createView(),
+                        'error'   => ''
+                      ]);
+
+                    endif;
+
+
+          endif;
+
+          return $app['twig']->render('index.html.twig', [
+              'form'      => $form->createView(),
+              'error'     => ''
+          ]);
+
+
     }
     /**
      * Affichage de la Page d'inscription
@@ -29,23 +93,9 @@ class IndexController
         return $app['twig']->render('inscription.html.twig');
     }
 
-    /**
-     * Affichage de la Page de connexion
-     */
-    public function connexionAction(Application $app) {
-
-        # Affichage dans la Vue
-        return $app['twig']->render('connexion.html.twig');
-    }
 
 
-    public function connexionGet(Application $app, Request $request){
 
-      return $app['twig']->render('connected.html.twig',[
-        'error'   => $app['security.last_error']($request),
-        'nomuser' => $app['session']->get('_security.nomuser')
-      ]);
-    }
 
     /**
      * Traitement POST du Formulaire d'Inscription
@@ -99,5 +149,12 @@ class IndexController
         'active'      => $active
       ]);
     }
+    /**
+     * Affichage de la Page de CGU
+     */
+    public function cguAction(Application $app) {
 
+        # Affichage dans la Vue
+        return $app['twig']->render('cgu.html.twig');
+    }
 }

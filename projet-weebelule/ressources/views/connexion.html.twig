@@ -6,7 +6,7 @@
 {# Fil d'Ariane #}
 
 {% set active = 'connexion' %}
-{% set error = 'in' %}
+{% set error = '' %}
 {# Block de Contenu défini dans base.html.twig #}
 {% block contenu %}
     <!-- .row>.col-xs-6.col-xs-push-3 -->
@@ -29,24 +29,22 @@
                 </div>
             {% endif %}
 
-            <form action="{{ url('weebelule_connexion_get') }}" class="form-horizontal" method="post">
+            <form action="{{ url('weebelule_connexion') }}" class="form-horizontal" method="post">
 
                 <!-- Email et Mot de Passe -->
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <input name="_username" value="" required class="form-control"
-                            type="email" placeholder="Saisissez votre Email">
+                        {{ form_row(form.email) }}
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <input name="_password" required class="form-control"
-                            type="password" placeholder="*********">
+                        {{ form_row(form.password) }}
                     </div>
                 </div>
 
-                <input type="submit" class="btn btn-block btn-primary" value="Connexion">
+                {{ form_row(form.submit) }}
 
             </form>
         </div>

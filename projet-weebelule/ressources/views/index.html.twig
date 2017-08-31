@@ -8,10 +8,50 @@
 
         <div class="container">
             <div class="starter-template">
-                <h1>{{ message }}</h1>
                 <p class="lead">Use this document as a way to quickly start any new project.</p>
             </div>
-            {% include 'connexion.html.twig' %}
+
+            <div class="row">
+                <div class="col-xs-6 col-xs-push-3">
+                    <h2 class="text-center">Connexion</h2 >
+
+                    {% if error == true %}
+                        <div class="alert alert-danger">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                            {{ error | replace({"Bad credentials." : " Identifiants et/ou mot de passe incorrect."}) }}
+                        </div>
+                    {% endif %}
+
+                    {% if global.request.get('inscription') == 'success' %}
+                        <div class="alert alert-success">
+                            <p><i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                            Félicitation, votre inscription est effective.
+                                <br>Vous pouvez maintenant vous connecter.</p>
+                        </div>
+                    {% endif %}
+
+                    <form action="{{ url('home') }}" class="form-horizontal" method="post">
+
+                        <!-- Email et Mot de Passe -->
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                {{ form_row(form.EMAILUSER) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                {{ form_row(form.MDPUSER) }}
+                            </div>
+                        </div>
+                          {{ form_row(form._token) }}
+                          {{ form_row(form.submit) }}
+
+                    </form>
+                </div>
+            </div>
+
+
             <div class="btn btn-success">
               <a href="{{ url('weebelule_annonce_post') }}">Publies ton Annonce !</a>
             </div>
