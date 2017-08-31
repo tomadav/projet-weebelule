@@ -295,9 +295,11 @@ footer{
 	text-align:center;
 	font-size:12px;
 }
+
 .social-login p{
 	margin:15px 0;
 }
+
 .social-login ul{
 /*
 	margin:0;
@@ -306,11 +308,13 @@ footer{
     margin-bottom: 10%;
 	list-style-type:none;
 }
+
 .social-login ul li{
 	width:33%;
-	float:left;
+	float:right;
     clear:fix;
 }
+
 .social-login ul li a{
 	font-size:13px;
 	color:#fff;
@@ -318,12 +322,29 @@ footer{
 	padding:10px 0;
 	display:block;
 }
+
 .social-login ul li:nth-child(1) a{
 	background:#3b5998;
 }
 .social-login ul li:nth-child(2) a{
 	background:#e74c3d;
 }
+
 .social-login ul li:nth-child(3) a{
 	background:#3698d9;
+}
+
+
+/******************** Page ccm ************************************/
+.card{
+    margin-bottom: 1rem;
+}
+
+
+.card-body{
+    background: white;
+    opacity: .8;
+    padding: 1rem;
+    border-radius: 1rem;
+
 }

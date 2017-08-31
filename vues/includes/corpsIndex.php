@@ -12,7 +12,7 @@
                         <div>
                             <div class="circle-text" id="wam2">
                                 <div>
-                                    <a href="#"  title="aller sur la page Comment ça marche"><span class="ion-android-bulb" id="ampoule"></span>
+                                    <a href="ccm.php"  title="aller sur la page Comment ça marche"><span class="ion-android-bulb" id="ampoule"></span>
                                         <p>Comment ça marche</p>
                                     </a>
                                 </div>

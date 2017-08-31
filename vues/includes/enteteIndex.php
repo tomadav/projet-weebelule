@@ -15,7 +15,7 @@
 
 
     <body>
-               <img src="img/FOND-SITE-WEEBELULE.png" alt="image fond" class="img-responsive imageFond">
+               <img src="img/back.jpg" alt="image fond" class="img-responsive imageFond">
         <!-- Ici commence le logo du site-->
         <div id="body-fond" class="container">
                    
