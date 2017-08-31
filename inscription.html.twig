@@ -41,20 +41,24 @@
                 <!-- Adresse -->
                 <div class="form-group">
                     <div class="col-xs-4">
-                        <input name="Adresse" required class="form-control"
+                        <input name="Adresse" id="googlePlace" required class="form-control"
                             type="text" placeholder="Saisissez votre adresse">
                     </div>
                     <div class="col-xs-4">
-                        <input name="CP" required class="form-control"
-                            type="text" placeholder="Saisissez le code postal">
+                        <input name="numero" id="Adresse" required class="form-control"
+                            type="text" placeholder="Adresse">
                     </div>
                     <div class="col-xs-4">
-                        <input name="Ville" required class="form-control"
-                            type="text" placeholder="Saisissez la ville">
+                        <input name="route" id="CP" required class="form-control"
+                            type="text" placeholder="CP">
+                    </div>
+                    <div class="col-xs-4">
+                        <input name="CP" id="Ville" required class="form-control"
+                            type="text" placeholder="Ville">
                     </div>
                 </div>
 
-                
+
                 <!-- Role du Membre pour les droits d'accès -->
                 <!-- à n'utiliser que pour l'admin, pour donner des droits si besoin à un nouvel admin-->
                 <!-- <div class="form-group">
@@ -71,4 +75,39 @@
             </form>
         </div>
     </div>
+    
+{% endblock %}
+
+
+
+
+
+{% block javascripts %}
+{{ parent() }}
+
+<script>
+$( document ).ready(function() {
+    function initialize() {
+
+     var options = {
+      componentRestrictions: {country: "fr"}
+     };
+
+     var input = document.getElementById('googlePlace');
+     var autocomplete = new google.maps.places.Autocomplete(input, options);
+
+     google.maps.event.addListener(autocomplete,"place_changed", function(){
+       var place=autocomplete.getPlace();
+       alert(place.name)
+      //  <!-- document.getElementById('numero').value =  -->
+       document.getElementById('Adresse').value = place.name;
+       document.getElementById('CP').value = postal_.name;
+       document.getElementById('Ville').value = localities.name;
+
+     });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+  });
+  </script>
 {% endblock %}
