@@ -8,7 +8,7 @@ include'includes/navbar.php';
 
     <div class="container">
 
-        <h2>Comment ça marche ???</h2>
+        <h2  class="mb-0">Comment ça marche ???</h2>
 
         <br>
 

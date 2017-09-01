@@ -4,12 +4,12 @@
             <nav class="navbar">
                 <a class="col-md-4 navbar-brand" href="index.php"><img class="img-responsive" src="img/troc2.png"></a>                      
                 <ul class="col-md-8 positionNav nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li class="active"><a href="accueil.php">Home</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
             </nav>
+            <a class="pastilleFree" href="inscription.php"><img class="img-responsive" src="img/slide-inscription-annuaire.png"></a>
         </div>
     </div>
 </div>

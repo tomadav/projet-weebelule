@@ -1,13 +1,8 @@
 <?php
 include'includes/enteteAccueil.php';
-include'includes/navbar.php';
+include'includes/navbarConnect.php';
 
 ?>
-
-                    </div>
-                </div>
-            </nav>
-        </div>
         
     <div class="container">
         <div class="row">
@@ -30,17 +25,7 @@ include'includes/navbar.php';
             </div>
             <a href="inscription.html" class="text-center new-account btn btn-warning">Créer un compte </a>
         </div>
-        </div>
-        
-        
-            <div class="social-login">
-            <p>- - - - - - - - - - - - - Ou connectez-vous avec - - - - - - - - - - - - - </p>
-			<ul>
-            <li><a href=""><i class="fa fa-facebook"></i> Facebook</a></li>
-            <li><a href=""><i class="fa fa-google-plus"></i> Google+</a></li>
-            </ul>
-            </div>
-        
+        </div>        
     </div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

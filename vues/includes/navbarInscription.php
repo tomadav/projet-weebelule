@@ -9,10 +9,7 @@
                     <li><a href="contact.php">Contact</a></li>
                     <li><a href="PageConnexion.php"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
                 </ul>
-                
-
             </nav>
-            <a class="pastilleFree" href="inscription.php"><img class="img-responsive" src="img/slide-inscription-annuaire.png"></a>
         </div>
     </div>
 </div>
