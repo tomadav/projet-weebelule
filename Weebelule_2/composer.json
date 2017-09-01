@@ -1,23 +1,23 @@
 {
-    "type": "library",
-    "name": "arseniew/silex-idiorm-provider",
-    "description": "Silex service provider for Idiorm",
-    "homepage": "http://github.com/arseniew/silex-idiorm-provider",
-    "license": "MIT",
-    "keywords": ["silex", "service provider", "idiorm"],
-    "authors": [
-        {
-            "name": "Marcin Batkowski",
-            "email": "arseniew@gmail.com"
-        }
-    ],
-    "require": {
-        "j4mie/idiorm": "1.5.*"
-    },
-    "autoload": {
-        "psr-0": {
-            "Arseniew\\": "src/"
-        }
+  "name" : "Hugo LIEGEARD",
+  "version" : "1.0",
+  "require" : {
+    "silex/silex" : "~2.0",
+    "twig/twig" : "^2.4",
+    "symfony/twig-bridge" : "^3.3",
+    "symfony/asset" : "^3.3",
+    "doctrine/dbal" : "~2.2",
+    "j4mie/idiorm" : "^1.5",
+    "symfony/security" : "^3.3",
+    "symfony/form": "^3.3",
+    "symfony/validator": "^3.3",
+    "symfony/config": "^3.3",
+    "symfony/security-csrf": "^3.3"
+  },
+  "autoload" : {
+    "psr-4" : {
+      "App\\" : "src/App/",
+      "Idiorm\\" : "src/Idiorm/"
     }
-    
+  }
 }

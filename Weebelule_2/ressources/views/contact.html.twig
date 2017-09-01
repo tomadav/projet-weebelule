@@ -1,0 +1,61 @@
+{% extends 'layout.html.twig' %}
+
+{# Block de title défini dans base.html.twig #}
+{% block title %} Accueil {% endblock %}
+
+{# fil d'ariane#}
+{% set active = 'contact' %}
+
+{# Block de Contenu défini dans base.html.twig #}
+{% block contenu %}
+
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
+
+    <h2>Nous contacter</h2>
+    <br>
+
+    <form  method="post" action="contact2.php">
+      <div class="form-group">
+        <label class="obligatoire">Nom</label>
+        <input type="text" name="nom" required class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label class="obligatoire">Prénom</label>
+        <input type="text" name="prenom"  required class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label class="obligatoire">Email</label>
+        <input type="email" name="email" required class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label class="obligatoire">Message</label>
+        <textarea name="message" required class="form-control" rows="10" cols="80"></textarea>
+      </div>
+
+      <div class="form-group text-center">
+        <input type="submit" name="btnSub" value="Envoyer" class="btn btn-success">
+
+      </div>
+
+    </form>
+    <p>
+      <span class="obligatoire"></span>
+      <em>Champs obligatoires</em>
+    </p>
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script src="//cdn.ckeditor.com/4.7.2/standard/ckeditor.js"></script>
+<script>
+  CKEDITOR.replace('message');
+</script>
+{% endblock %}

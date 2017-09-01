@@ -1,55 +1,30 @@
-## Idiorm Service Provider for Silex 2+
+# Framework Silex Pack de Démarrage
 
-Provider for integrating [Idiorm](https://github.com/j4mie/idiorm) with [Silex](http://silex.sensiolabs.org/)
+Architecture vierge pour bien démarrer avec [silex](http://silex.sensiolabs.org/).
+-
+Exemple de site internet complet sous SILEX.
 
-#### Registering and configuration
+Avantages
+------------
 
-```php
-$app->register(new \Idiorm\Silex\Provider\IdiormServiceProvider(), array(
-        'idiorm.db.options' => array(
-            'connection_string' => 'mysql:host=localhost;dbname=my_db',
-            'username' => 'my_username',
-            'password' => 'my_password',
-			'id_column_overrides' => array(
-				'table' =>  'primarykey'
-			)
-        )
-);
-```
+- Structurer son projet SILEX
+- Utiliser les Avantages du ControllerServiceProvider (Exemple d'une façon de faire...)
+- Utiliser Twig et Asset Service Provider
+- Utiliser les Formulaires, la protection CSRF et la validation des données
+- Utiliser  [Doctrine DBAL](http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/) et/ou [Idiorm ORM](https://github.com/j4mie/idiorm)
+- Le Firewall pour l'inscription, la connexion et la gestion des droits d'accès des membres
+- La Gestion des Erreurs 404 et autres...
 
-For more details on configuration array see: [Idiorm configuration options](http://idiorm.readthedocs.org/en/latest/configuration.html)
+Installation
+------------
 
-#### Usage in controller
+    git clone biynmedia/Silex-Starter-Pack
+    cd Silex-Starter-Pack
+    composer install
+    
+En Plus
+------------
+    Besoin d'un exemple plus complet ?
+    Projet de Démonstration Silex avec les principales fonctionnalités.
 
-To get all records for given table:
-
-```php
-$app['idiorm.db']->for_table('my_table')->find_result_set();
-```
-
-For more query examples see: [Idiorm querying](http://idiorm.readthedocs.org/en/latest/querying.html)
-
-#### Multiple connections
-
-To configure multiple connections use $app['idiorm.dbs.options']
-
-```php
-$app['idiorm.dbs.options'] = array(
-    'first_connection' => array(
-        'connection_string' => 'mysql:host=localhost;dbname=my_db',
-        'username' => 'my_username',
-        'password' => 'my_password',
-    ),
-    'second_connection' => array(
-        'connection_string' => 'sqlite:./example.db'
-    )
-);
-```
-
-$app['idiorm.dbs.options'] Needs to be associative array, where keys will be connection names, and value will contain configuration array
-
-To use connections in controller:
-```php
-$app['idiorm.dbs']['first_connection']->for_table('my_table')->find_result_set();
-$app['idiorm.dbs']['second_connection']->for_table('other_table')->find_result_set();
-```
+[Framework Silex Demo Website](https://github.com/biynmedia/Framework-Silex-Demo-Website)

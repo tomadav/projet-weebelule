@@ -1,0 +1,206 @@
+{% extends 'layout.html.twig' %}
+
+{# Block de titre défini dans base.html.twig #}
+{% block title %}annonce {% endblock %}
+
+{# Fil d'Ariane #}
+{% set active = 'annonce' %}
+
+{% block contenu %}
+<div class="row">
+    <div class="col-xs-6 col-xs-push-3" name="container">
+        <h2 class="text-center">Publier son annonce</h2 >
+        <form action="{{ path ('weebelule_annonce_post') }}" class="form-horizontal" method="post">
+
+            <!-- Titre de l'Annonce et Catégorie -->
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <label for="titre">Titre</label>
+                    <input id="titre" name="TITREANNONCE" required class="form-control"
+                        type="text" placeholder="Titre de l'annonce">
+                </div>
+                <div class="col-xs-12">
+                    <label for="categorie_annonce">Catégories</label>
+                    <select id="categorie_annonce" name="IDSCATEGORIE"  class="form-control" placeholder="sous-catégorie">
+                    <optgroup label="MATÉRIEL">
+                      <option> Ameublement & Déco </option>
+                      <option> Électromenager </option>
+                      <option> Bricolage & Jardinage </option>
+                      <option> Puériculture </option>
+                      <option> Sport & Loisirs </option>
+                    </optgroup>
+                    <optgroup label="CULTURE">
+                      <option> Livres </option>
+                      <option> Comics & BD </option>
+                      <option> Films & Musique </option>
+                      <option> Multimedia </option>
+                      <option> Instruments de Musique </option>
+                    </optgroup>
+                    <optgroup label="MODE">
+                      <option> Habillement Homme </option>
+                      <option> Habillement Femme </option>
+                      <option> Habillement Enfant </option>
+                      <option> Accessoires </option>
+                      <option> Chaussures </option>
+                    </optgroup>
+                    <optgroup label="SERVICE À DOMICILE">
+                      <option> Bricolage </option>
+                      <option> Mécanique </option>
+                      <option> Aide aux Seniors </option>
+                      <option> Aide Ménagère </option>
+                      <option> Garde d'Enfants </option>
+                      <option> Démenagement </option>
+                      <option> Aide Informatique </option>
+                      <option> Soutien Scolaire </option>
+                      <option> Beauté </option>
+                      <option> Administratif </option>
+                    </optgroup>
+                    <optgroup label="VIVRE ENSEMBLE">
+                      <option> Coaching </option>
+                      <option> Covoiturage </option>
+                      <option> Randonnée </option>
+                      <option> Sorties Enfants </option>
+                      <option> Sorties Sportives </option>
+                    </optgroup>
+                    <optgroup label="VACANCES">
+                      <option> Garde d'Animaux </option>
+                      <option> Services en votre abscence </option>
+                      <option> Home-Sitting </option>
+                      <option> Échange de Maison </option>
+                      <option> Voyage </option>
+                    </optgroup>
+                    <optgroup label="JE RECHERCHE">
+                      <option> ... </option>
+                    </optgroup>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-xs-12">
+                <label for="prix">Valeur(en Weebs)</label>
+                <input id="prix" name="VALEURANNONCE" required class="form-control" type="text" value="0" >
+                <p class="help-block">0 si vous le donnez gratuitement </p>
+              </div>
+              <div class="col-xs-12">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="CONTENUANNONCE" height="1" placeholder="Description de la proposition..."></textarea>
+            </div>
+          </div>
+            <div class="form-group">
+              <div class="col-xs-6">
+              <label for="address">Adresse</label>
+              <input id="adress" name="ADRESSEUSER" required class="form-control" type="text" placeholder="Lieu de l'échange">
+              </div>
+              <!-- Placer l'Api Google Maps et ajouter potentiellement 2 champs lattitude et longitude -->
+            </div>
+            <div class="form-group" name="PHOTOANNONCE">
+
+              <div class="col-xs-12">
+
+
+                <div id="feat_image">
+                  <label class="control-label" for="edit-field-category-und"> Image Principale </label>
+                  <div id="featIMG" class="option_item">
+                    <div class="my-account-author-image">
+                      <img class="author-avatar" src="" alt="">
+
+
+                    </div>
+                    <div class="full-width-button">
+
+                        <a class="upload-feat-image" href="#">
+                        <i class="fa fa-cloud-upload"></i>
+                        <label for="icone">
+                        Télécharger une nouvelle image
+                        </label>
+                      </a>
+                      <input type="file" class="dropify" name="icone" id="icone" />
+                    </div>
+                    <br>
+                    <div class="button_del_feat_image full-width-button">
+                      <a href="" accesskey="&H74">
+                      <i class="fa fa-trash-o"></i>
+                      Effacer l'image (F5)
+                      </a>
+                    </div>
+                  </div> <!--fin featIMG-->
+
+
+
+                    <div id="images_criteria">
+                      <label for="edit-field-category-und" class="control-label">Autres Photos</label>
+                    </div>
+                    <div class="full-width-button">
+
+                        <a class="upload-feat-image" href="#">
+                        <i class="fa fa-cloud-upload"></i>
+                        <label for="icone">
+                        Télécharger une nouvelle image
+                        </label>
+                      </a>
+                      <input type="file" class="" name="icone" id="icone" />
+                    </div>
+                    <br>
+                    <div class="button_del_feat_image full-width-button">
+                      <a href="" accesskey="&H74">
+                      <i class="fa fa-trash-o"></i>
+                      Effacer l'image (F5)
+                      </a>
+                    </div>
+                    <div class="full-width-button">
+
+                        <a class="upload-feat-image" href="#">
+                        <i class="fa fa-cloud-upload"></i>
+                        <label for="icone">
+                        Télécharger une nouvelle image
+                        </label>
+                      </a>
+                      <input type="file" class="" name="icone" id="icone" />
+                    </div>
+                    <br>
+                    <div class="button_del_feat_image full-width-button">
+                      <a href="" accesskey="&H74">
+                      <i class="fa fa-trash-o"></i>
+                      Effacer l'image (F5)
+                      </a>
+                    </div>
+                    <script>//pas fonctionnel
+                    $(document).ready(function($){
+    $('#submit_add_image').click(function(e){
+        var copie = $('#featIMG').clone();
+        copie.find('.full-width-button').html('icone');
+        copie.find('.button_del_feat_image').html('rouge').css('color', 'red');
+        copie.appendTo('body');
+    });
+});
+
+                    </script>
+                  </div> <!--fin feat_image-->
+                </div>
+              </div> <!--fin PHOTOANNONCE-->
+            </div> <!-- fin container-->
+
+          <div class="col-xs-12" name="cadrage_button">
+            <div class="col-xs-5"></div>
+            <div class="col-xs-2">
+              <input type="submit" class="btn btn-block btn-primary" value="Publier">
+            </div>
+            <div class="col-xs-5"></div>
+          </div> <!-- fin cadrage_button-->
+        </form>
+</div> <!--fin div class row-->
+{% endblock %}
+{% block javascripts %}
+
+{{ parent() }}
+
+
+</script>
+<script src="//cdn.ckeditor.com/4.7.2/standard/ckeditor.js"></script>
+<script type="text/javascript">
+CKEDITOR.replace('description')
+
+</script>
+{% endblock %}
