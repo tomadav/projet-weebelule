@@ -15,6 +15,10 @@ html, body, .block {
     background-attachment:fixed;
 }
 
+body{
+    background-image: url(../img/FOND-SITE-WEEBELULE.png);
+}
+
 /******************** sidebar *************************/
 .first {
     position: relative;
@@ -32,14 +36,9 @@ html, body, .block {
   text-decoration: none;
 }
 
-.image {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
+.image2 {
     box-shadow: 5px 5px 15px black;
+    margin-bottom: 20px;
 }
 
 /* Texte défilant 
@@ -151,7 +150,7 @@ body{
 
 .word{
   margin: auto;
-  color: black;
+  color: #0099cc;
   font: 500 2rem/1.5 'Montserrat',sans-serif;
   text-shadow: longshadow(10,darken($key,10%));
 }
@@ -191,24 +190,33 @@ body{
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {height: 450px}
 
+.want a{
+    text-decoration: none;
+}
 
 /***************** navbar ****************/
 .navbar {
+/*
     margin-bottom: 50px;
+*/
     border-radius: 5px;
+/*
     background-color: #0099cc;
+*/
     font-size: 2em;
-    align-items : center;
-    vertical-align: middle;
+    align-items: center;
+    vertical-align: text-top;
 }
 
 .navbar-brand{
-    display: flex;
-    height: auto;
+    width: 20%;
+    height: 20%;
 }
 
 .imgborder {
+/*
     padding-top: 50px;
+*/
 }
 
 .pastilleFree{
@@ -252,7 +260,7 @@ h1 {
     border-radius: 50px;
     background-color: #33b5e5;
     font-size: 5rem;
-    box-shadow: 5px 5px 5px black inset; 
+    box-shadow: 6px 6px 10px black inset; 
 }
 
 .circle-text {
@@ -266,7 +274,7 @@ h1 {
     width: 100%;
     height: 0;
     padding-bottom: 100%;
-    background-color: rgba(169, 169, 169, 1);;
+    background-color: rgba(169, 169, 169, 1);
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
@@ -431,4 +439,127 @@ font-size: 24px;
 
 h1 small{
     font-size: 3rem;
+}
+
+/************** mon compte ***************/
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu li {
+    padding: 8px;
+    margin-bottom: 7px;
+    background-color: #33b5e5;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.menu li:hover {
+    background-color: #0099cc;
+}
+
+
+/* Profile container */
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-qualite {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+    
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
 }

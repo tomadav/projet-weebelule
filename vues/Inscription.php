@@ -6,11 +6,8 @@ include'includes/navbarInscription.php';
 
 <div class="container">
 
-    <div class="row">
-        <div class="col-md-offset-3 col-md-6">
-            <h1> Inscription GRATUITE<br/> <small> Merci de renseigner tous les champs </small></h1>
-        </div>
-    </div>
+            <h1> Inscription GRATUITE<small> Merci de renseigner tous les champs </small></h1>
+        
     
     <div class="well well-sm col-md-offset-3 col-md-6">
     <div class="row">

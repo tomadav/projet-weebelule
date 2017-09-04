@@ -80,10 +80,8 @@
                     </div>
 
                     <hr>
-                    <div class="container weeb">
-                        <a href="#"><h3>Je ne trouve pas ce que je veux</h3>
-                            <p>Je sollicite les Weebers...</p></a>
-                    </div>
-                </div> 
-            </div>
-        
+                    <div class="want">
+                        <a href="#"><h1>Je ne trouve pas ce que je veux<br><small>Je sollicite les Weebers...</small></h1></p></a>
+                </div>
+            </div> 
+        </div>
