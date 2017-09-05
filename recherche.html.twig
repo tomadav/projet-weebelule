@@ -1,0 +1,358 @@
+{% extends 'layout.html.twig' %}
+
+{# Block de title défini dans base.html.twig #}
+{% block title %} Accueil {% endblock %}
+
+{# fil d'ariane#}
+{% set active = 'recherche' %}
+
+{# Block de Contenu défini dans base.html.twig #}
+{% block contenu %}
+<div class="row">
+                <div class="col-lg-10 col-md-9">
+<!--                        <div class="col-lg-1"><img src="img/ajout_contact.png" alt=""></div>-->
+                    <h1 class="titre-contact">Rechercher dans la communauté</h1>
+                </div>
+                <div class="col-lg-2">
+                    <form>
+                        <input id="impression" name="impression" type="button" onclick="imprimer_page()" value="Imprimer" class="pull-right" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="tableaudebord">
+                        <div class="contact_container">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <h2>Rechercher un troc, un don, un prêt...</h2>
+                                    <p>Lorem ipsum dolor amet Lorem ipsum dolor amet Lorem ipsum dolor amet </p>
+                                    <div class="nb_com" style="display:none">9</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='container'>
+                            <div class='row'>
+
+
+
+                                    <form class="form-horizontal" role="form">
+                                        <div class='row'>
+                                            <div class="col-lg-12">
+                                                <div class="titleprghp">
+                                                    <span class="prg">Information contact</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='row'>
+
+                                                <div class="col-lg-6">
+                                                    <!--<form class="form-horizontal" role="form">-->
+                                                    <div class="form-group">
+                                                        <label for="civilite" class="col-sm-2 control-label">Mots clé :</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" lname="civilite;" id="civilite">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="nom" class="col-sm-2 control-label">Catégories</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" name="name" id="name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" >
+                                                        <label for="prenom" class="col-sm-2 control-label">Lieux :</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" name="prenom" id="prenom">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                    <div class="col-lg-12">
+                                                    <div class="titleprghp"
+                                                            <span class="prg">Evenement</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                            <!--<form class="form-horizontal" role="form">-->
+                                                            <div class="form-group">
+                                                                <label for="programme" class="col-sm-2 control-label">Programme</label>
+                                                                <div class="col-sm-8">
+                                                                    <select class="form-control">
+                                                                        <option>1</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option>4</option>
+                                                                        <option>5</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                            </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="boutton">
+                                                    <div class="col-lg-7 col-md-7 hidden-md hidden-xs"></div>
+                                                    <div class="col-lg-1 col-md-1 col-xs-12">
+                                                        <button name="submit" id="cancel" type="reset" value="reset" class="btn btn-default">Cancel<span class="glyphicon glyphicon-remove"></span></button>
+                                                    </div>
+                                                    <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-xs-12">
+                                                        <button name="submit" id="submit" type="submit" value="submit" class="btn btn-default"><span class="glyphicon glyphicon-floppy-disk"></span>Enregistrer la fiche contact<span class="glyphicon glyphicon-chevron-right"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+
+<!-- <section id="featured-list">
+    <div class="container">
+      <form action="http://www.weebelule.fr" method="get" id="views-exposed-form-search-view-other-ads-page" accept-charset="UTF-8">
+        <input placeholder="Mots clés" type="text" id="edit-search-api-views-fulltext" name="s" value="" size="100" maxlength="128" style="height:30px;">
+        <select id="edit-field-category" name="category_name"style="background-color: #ffffff;border: 1px solid #cccccc;height: 40px;vertical-align: middle;font-size:14px;padding-left:15px">
+  				<option value="All" selected="selected">Catégorie...</option>
+
+  				<option value="235" >Matériel - Echange</option>
+  				<option value="266" >- Ameublement &amp; Déco</option>
+  				<option value="265" >- Electroménager</option>
+  				<option value="267" >- Bricolage jardinage</option>
+  				<option value="268" >- Puériculture</option>
+  				<option value="269" >- Loisirs &amp; Sport</option>
+
+  																																																																																																																																																																										<option value="232" >Matériel - Prêt</option>
+
+  				<option value="280" >- Ameublement &amp; Déco</option>
+  				<option value="278" >- Electroménager</option>
+  				<option value="277" >- Bricolage jardinage</option>
+  				<option value="281" >- Puériculture</option>
+  				<option value="279" >- Loisirs &amp; Sport</option>
+
+  																																																																																																																																																																										<option value="238" >Culture - Echange</option>
+
+        	<option value="290" >- Livres</option>
+        	<option value="287" >- Comics et BD</option>
+        	<option value="288" >- Films et musique</option>
+        	<option value="291" >- Multimedia</option>
+        	<option value="289" >- Instruments - Musique</option>
+
+  																																																																																																																																																														<option value="233" >Culture - Prêt</option>
+
+  				<option value="272" >- Livres</option>
+  				<option value="275" >- Comics et BD</option>
+  				<option value="276" >- Films et musique</option>
+  				<option value="274" >- Multimedia</option>
+  				<option value="273" >- Instruments - Musique</option>
+
+  																																																																																																																																																														<option value="234" >Mode - Echange</option>
+
+  				<option value="255" >- Habillement enfant</option>
+  				<option value="256" >- Habillement femme</option>
+  				<option value="257" >- Habillement homme</option>
+  				<option value="258" >- Accessoires</option>
+  				<option value="259" >- Chaussures</option>
+
+  																																																																																																																																																														<option value="301" >Mode - Prêt</option>
+
+  				<option value="303" >- Habillement enfant</option>
+  				<option value="304" >- Habillement femme</option>
+  				<option value="305" >- Habillement homme</option>
+  				<option value="302" >- Accessoires</option>
+  				<option value="306" >- Chaussures</option>
+
+  				<option value="229" >Aide au bricolage</option>
+  				<option value="244" >- Maison</option>
+  				<option value="246" >- Jardin</option>
+  				<option value="250" >- Mécanique</option>
+  				<option value="248" >- Réparations diverses</option>
+
+  				<option value="230" >Aide à domicile</option>
+  				<option value="241" >- Aide aux seniors</option>
+  				<option value="242" >- Aides ménagères</option>
+  				<option value="243" >- Babysitting</option>
+  				<option value="261" >- Beauté et soins</option>
+  				<option value="297" >- Déménagement</option>
+
+  				<option value="231" >Aide informatique</option>
+  				<option value="253" >- Conseils</option>
+  				<option value="254" >- Cours d'informatique</option>
+  				<option value="252" >- Dépannage</option>
+  				<option value="251" >- Administratif</option>
+  				<option value="298" >- Internet</option>
+
+  				<option value="1" >Vivre ensemble</option>
+  				<option value="260" >- Conseils et coaching</option>
+  				<option value="264" >- Cours, soutien scolaire</option>
+  				<option value="295" >- Covoiturage</option>
+  				<option value="299" >- Balades et randonnées</option>
+  				<option value="296" >- Sorties enfants</option>
+  				<option value="292" >- Sorties sportives</option>
+
+  				<option value="240" >Vacances</option>
+  				<option value="262" >- Garde d'animaux</option>
+  				<option value="263" >- Services en votre absence</option>
+  				<option value="270" >- Home Sitting</option>
+  				<option value="271" >- Echange de maison</option>
+  				<option value="294" >- Voyage</option>
+
+  				<option value="236" >Je recherche</option>
+  				<option value="404" >- Besoin de quelque chose</option>
+  				<option value="405" >- Besoin d'un service</option>
+
+			   </select>
+         <input id="address" name="address" type="textbox" value="" class="form-text" placeholder=" Localité" style="height:35px;margin-right:10px;vertical-align:top">
+         <input class="search-submit" type="submit"  value="Rechercher"  style="height:40px;margin-right:10px;float:right">
+
+				 <input type="text" name="geo-location" id="geo-location" value="off" data-default-value="off">
+
+				 <input type="text" name="geo-radius-search" id="geo-radius-search" value="100" data-default-value="100">
+
+         <input type="text" name="geo-search-lat" id="geo-search-lat" value="48.86" data-default-value="48.86">
+
+         <input type="text" name="geo-search-lng" id="geo-search-lng" value="2.35" data-default-value="2.35">
+
+
+         <div id="map-container" style="visible:hidden">
+					<div id="map-canvas" style="display: none"></div>
+						<script type="text/javascript">
+
+							jQuery(document).ready(function($) {
+
+								var geocoder;
+								var map;
+								var marker;
+
+								var geocoder = new google.maps.Geocoder();
+
+								function geocodePosition(pos) {
+								  geocoder.geocode({
+								    latLng: pos
+								  }, function(responses) {
+								    if (responses && responses.length > 0) {
+								      updateMarkerAddress(responses[0].formatted_address);
+								    } else {
+								      updateMarkerAddress('Cannot determine address at this location.');
+								    }
+								  });
+								}
+
+								function updateMarkerPosition(latLng) {
+								  jQuery('#latitude').val(latLng.lat());
+								  jQuery('#longitude').val(latLng.lng());
+								  jQuery('#geo-search-lat').val(marker.getPosition().lat());
+						          jQuery('#geo-search-lng').val(marker.getPosition().lng());
+								}
+
+								function updateMarkerAddress(str) {
+								  jQuery('#address').val(str);
+								}
+
+								function initialize() {
+
+								  var latlng = new google.maps.LatLng(0, 0);
+								  var mapOptions = {
+								    zoom: 2,
+								    center: latlng
+								  }
+
+								  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+								  geocoder = new google.maps.Geocoder();
+
+								  marker = new google.maps.Marker({
+								  	position: latlng,
+								    map: map,
+								    draggable: true
+								  });
+
+								  // Add dragging event listeners.
+								  google.maps.event.addListener(marker, 'dragstart', function() {
+								    updateMarkerAddress('Dragging...');
+								  });
+
+								  google.maps.event.addListener(marker, 'drag', function() {
+								    updateMarkerPosition(marker.getPosition());
+								  });
+
+								  google.maps.event.addListener(marker, 'dragend', function() {
+								    geocodePosition(marker.getPosition());
+								  });
+
+								}
+
+								google.maps.event.addDomListener(window, 'load', initialize);
+
+								jQuery(document).ready(function() {
+
+								  initialize();
+
+								  jQuery(function() {
+								    jQuery("#address").autocomplete({
+								      //This bit uses the geocoder to fetch address values
+								      source: function(request, response) {
+								        geocoder.geocode( {'address': request.term }, function(results, status) {
+								          response(jQuery.map(results, function(item) {
+								            return {
+								              label:  item.formatted_address,
+								              value: item.formatted_address,
+								              latitude: item.geometry.location.lat(),
+								              longitude: item.geometry.location.lng()
+								            }
+								          }));
+								        })
+								      },
+								      //This bit is executed upon selection of an address
+								      select: function(event, ui) {
+								        jQuery("#latitude").val(ui.item.latitude);
+								        jQuery("#longitude").val(ui.item.longitude);
+								        jQuery("#geo-search-lat").val(ui.item.latitude);
+								        jQuery("#geo-search-lng").val(ui.item.longitude);
+
+								        var location = new google.maps.LatLng(ui.item.latitude, ui.item.longitude);
+
+								        marker.setPosition(location);
+								        map.setZoom(16);
+								        map.setCenter(location);
+
+								      }
+								    });
+								  });
+
+								  //Add listener to marker for reverse geocoding
+								  google.maps.event.addListener(marker, 'drag', function() {
+								    geocoder.geocode({'latLng': marker.getPosition()}, function(results, status) {
+								      if (status == google.maps.GeocoderStatus.OK) {
+								        if (results[0]) {
+								          jQuery('#address').val(results[0].formatted_address);
+								          jQuery('#latitude').val(marker.getPosition().lat());
+								          jQuery('#longitude').val(marker.getPosition().lng());
+								          jQuery('#geo-search-lat').val(marker.getPosition().lat());
+								          jQuery('#geo-search-lng').val(marker.getPosition().lng());
+								        }
+								      }
+								    });
+								  });
+								});
+							});
+				    </script>
+					</div>
+				</div>
+		   </form>
+    </div>
+</section> -->
+
+
+{% endblock %}

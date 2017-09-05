@@ -4,29 +4,50 @@
 {% block title %} Foire Aux Questions {% endblock %}
 
 {# Fil d'Ariane #}
-{% set active = 'mentions-legales' %}
+{% set active = 'mentions' %}
 
 {# Block de Contenu défini dans base.html.twig #}
 {% block contenu %}
+<div class="container">
+  <h1>Mentions Légales</h1>
+</div>
+<section class="ads-main-page">
+  <div class="container">
+	  <div class="span9 first" style="padding: 30px 0;">
+			<div class="ad-detail-content">
+        <h2 style="text-align: justify;">RAISON SOCIALE :</h2>
+            <p style="text-align: justify;">Weebelule</p>
 
-<h2>Mentions Légales</h2>
-<br>
+        <h2 style="text-align: justify;">FORME JURIDIQUE :</h2>
+            <p style="text-align: justify;">Association Loi 1901 à but non lucratif, dont l&rsquo;objet est l&rsquo;action en faveur de la protection de l&rsquo;environnement et du cadre de vie.</p>
 
-<p>RAISON SOCIALE : Weebelue</p><br>
-<p>FORME JURIDIQUE : Association Loi 1901 à but non lucratif, dont l&rsquo;objet est l&rsquo;action en faveur de la protection de l&rsquo;environnement et du cadre de vie.</p><br>
-<p>ADRESSE : 384 Chemin de la passerelle, 38780, Oytier St Oblas</p><br>
-<p>MAIL : cecile@weebelule.fr</p><br>
+        <h2 style="text-align: justify;">ADRESSE :</h2>
+            <p style="text-align: justify;">384, chemin de la Passerelle 38780 Oytier-Saint-Oblas</p>
 
-<p>RESPONSABLE DE PUBLICATION : Cécile DAVY <cecile@weebelule.fr></p><br>
+        <h2 style="text-align: justify;">MAIL :</h2>
+            <p style="text-align: justify;">cecile@weebelule.fr</p>
 
+        <h2 style="text-align: justify;">RESPONSABLE DE PUBLICATION :</h2>
+            <p style="text-align: justify;">Cécile DAVY</p>
+            <p style="text-align: justify;">cecile@weebelule.fr</p>
 
-<p>HEBERGEMENT : OVH SAS</p><br>
-<p>ADRESSE : 2 rue Kellerman BP 80157 ROUBAIX CEDEX 1</p><br>
-<p>TEL : 1007</p><br>
-<p>MAIL : cil@ovh.net</p><br>
+        <h2 style="text-align: justify;">HEBERGEMENT :</h2>
+            <p style="text-align: justify;">OVH SAS</p>
 
-<p>Enregistrement auprès de la CNIL sous le numéro 1865476 v 0</p><br>
-<p>Conformément à la loi Informatique et Libertés du 6 Janvier 1978 modifiée, vous possédez un droit d'accès, de rectification et de suppression des données vous concernant. Vous pouvez adresser votre demande à cecile@weebelule.fr</p>
+        <h2 style="text-align: justify;">ADRESSE :</h2>
+            <p style="text-align: justify;">2, rue Kellerman BP 80157 ROUBAIX cedex 1</p>
 
+        <h2 style="text-align: justify;">TEL. :</h2>
+            <p style="text-align: justify;">1007</p>
+
+        <h2 style="text-align: justify;">MAIL :</h2>
+            <p style="text-align: justify;">cil@ovh.net</p>
+
+        <p>Enregistrement auprès de la CNIL sous le numéro 1865476 v 0</p><br>
+        <p>Conformément à la loi Informatique et Libertés du 6 janvier 1978 modifiée, vous possédez un droit d'accès, de rectification et de suppression des données vous concernant. Vous pouvez adresser votre demande à cecile@weebelule.fr</p>
+      </div> <!--fin de la Div Ad detail-->
+	  </div><!--fin de la Div span9-->
+	</div> <!--fin de la Div Container-->
+</section>
 
 {% endblock %}
