@@ -5,13 +5,13 @@
   
 <!--
        <div class="defileParent">
-        <h4 class="defile">Les dernières annonces</h4>
+        <h4 class="defile">Dernières annonces</h4>
         </div>
 -->
 <!--<div class="defileParent">
 <span class="defile" 
 data-text=" Texte défilant en css et l'utilisation de l'attribut data-text pour fournir un roulement continu "> 
-Les dernières annonces 
+Dernières annonces 
 </span>
 </div>-->
        

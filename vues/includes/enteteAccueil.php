@@ -16,5 +16,3 @@
 
     <body>
     <div class="block">
-<!--       <img src="img/FOND-SITE-WEEBELULE.png" alt="image fond" class="img-responsive imageFond">
-        -->

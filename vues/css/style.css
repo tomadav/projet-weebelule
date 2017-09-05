@@ -6,15 +6,6 @@ html, body, .block {
     height: auto;
 }
 
-.imageFond {
-    position: absolute;
-    z-index: -500;
-    width: 100%;
-    height: auto;
-    background-repeat:repeat;
-    background-attachment:fixed;
-}
-
 body{
     background-image: url(../img/FOND-SITE-WEEBELULE.png);
 }
@@ -411,7 +402,7 @@ footer{
 }
 
 
-/******************** Page ccm ************************************/
+/**************** Page ccm ********************/
 .card{
     margin-bottom: 1rem;
 }
@@ -435,7 +426,7 @@ h2{
 font-size: 24px;
 }
 
-/****************** page inscription *******************/
+/*************** page inscription *****************/
 
 h1 small{
     font-size: 3rem;

@@ -14,11 +14,9 @@
 
 
 
-    <body>
-<!--               <img src="img/FOND-SITE-WEEBELULE.png" alt="image fond" class="img-responsive imageFond">-->
-               
+    <body>               
         <!-- Ici commence le logo du site-->
         <div id="body-fond" class="container">
                    
             <div>
-                <img id="logo" src="img/troc2.png" alt="logo du site weebelule" class="responsive">
+                <img id="logo" src="img/weebelule3.png" alt="logo du site weebelule" class="responsive">
