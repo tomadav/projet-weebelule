@@ -1,0 +1,133 @@
+{% extends 'layout.html.twig' %}
+
+{# Block de title défini dans base.html.twig #}
+{% block title %} Accueil {% endblock %}
+
+{# fil d'ariane#}
+{% set active = 'inscription' %}
+
+{# Block de Contenu défini dans base.html.twig #}
+{% block contenu %}
+    <!-- .row>.col-xs-6.col-xs-push-3 -->
+    <div class="row">
+        <div class="col-xs-6 col-xs-push-3">
+            <h2 class="text-center">Inscription d'un Membre</h2 >
+            <form action="{{ path('weebelule_inscription_post') }}" class="form-horizontal" method="post">
+
+                <!-- Prénom et Nom -->
+                <div class="form-group">
+                    <div class="col-xs-6">
+                        <input name="PRENOM" required class="form-control"
+                            type="text" placeholder="Saisissez votre Prénom">
+                    </div>
+                    <div class="col-xs-6">
+                        <input name="NOM" required class="form-control"
+                            type="text" placeholder="Saisissez votre Nom">
+                    </div>
+                </div>
+
+                <!-- Email et Mot de Passe -->
+                <div class="form-group">
+                    <div class="col-xs-6">
+                        <input name="EMAIL" required class="form-control"
+                            type="email" placeholder="Saisissez votre Email">
+                    </div>
+                    <div class="col-xs-6">
+                        <input name="MDP" required class="form-control"
+                            type="password" placeholder="*********">
+                    </div>
+                </div>
+
+                <!-- Adresse -->
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <input name="Adresse" id="googlePlace" required class="form-control"
+                            type="text" placeholder="Saisissez votre adresse">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- Numéro et Nom de Rue -->
+                    <div class="col-sm-6">
+                        <input name="numero" id="Adresse" required class="form-control"
+                            type="hidden" placeholder="Adresse">
+                    </div>
+                    <div class="col-sm-3">
+                        <input name="route" id="CodePostal" required class="form-control"
+                            type="hidden" placeholder="CP">
+                    </div>
+                    <div class="col-sm-3">
+                        <input name="CP" id="Ville" required class="form-control"
+                            type="hidden" placeholder="Ville">
+                    </div>
+                </div>
+
+            <div class="form-group">
+              <div class="col-xs-1">
+                <input  id="cgu" name="CGU" type="checkbox" required class="form-control">
+              </div>
+              <div class="col-xs-5">
+                <label for="cgu" style="padding-top: 3% ;">J'accepte les
+                <a href="{{ url('weebelule_cgu')}}" onclick="window.open(this.href, 'cgu', 'height=800 , width=900, to...no, resizable=yes, scrollbars=yes, status=no');return false;">Conditions Générales d'Utilisation</a>
+                </label>
+              </div>
+            </div>
+
+
+                <!-- Role du Membre pour les droits d'accès -->
+                <!-- à n'utiliser que pour l'admin, pour donner des droits si besoin à un nouvel admin-->
+                <!-- <div class="form-group">
+                    <div class="col-xs-12">
+                        <select name="ROLEAUTEUR" class="form-control">
+                            <option value="ROLE_AUTEUR" selected>ROLE_AUTEUR</option>
+                            <option value="ROLE_ADMIN">ROLE_ADMIN</option>
+                        </select>
+                    </div>
+                </div> -->
+
+                <input type="submit" class="btn btn-block btn-primary" value="M'inscrire">
+
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+
+
+{% block javascripts %}
+{{ parent() }}
+
+<script>
+$( document ).ready(function() {
+
+    function initialize() {
+
+     var options = {
+      componentRestrictions: {country: "fr"}
+     };
+
+     var googlePlace  = document.getElementById('googlePlace');
+     var Adresse      = $('#Adresse');
+     var CodePostal   = $('#CodePostal');
+     var Ville        = $('#Ville');
+
+     var autocomplete = new google.maps.places.Autocomplete(googlePlace, options);
+
+     google.maps.event.addListener(autocomplete,"place_changed", function() {
+
+      var placeObj = autocomplete.getPlace();
+
+      Adresse.val(placeObj.name);
+      CodePostal.val(placeObj.address_components[6].long_name);
+      Ville.val(placeObj.address_components[2].long_name);
+
+     });
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+  });
+  </script>
+{% endblock %}
