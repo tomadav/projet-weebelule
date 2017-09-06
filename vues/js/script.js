@@ -63,15 +63,15 @@ $('a').hover(
 
 
 var
-  words = ['Les dernières annonces'],
+  words = ['Dernières annonces'],
   part,
   i = 0,
   offset = 0,
   len = words.length,
   forwards = true,
   skip_count = 0,
-  skip_delay = 5,
-  speed = 100;
+  skip_delay = 2,
+  speed = 150;
 
 var wordflick = function(){
   setInterval(function(){

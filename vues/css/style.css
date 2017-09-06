@@ -221,7 +221,7 @@ body{
 
 /******************FOOTER*********************/
 footer {
-    background-color: #0099cc;
+    background-color: orangered;
     color: white;
     padding: 15px;
     border-radius: 5px;
@@ -254,7 +254,7 @@ h1 {
 /*
     background-color: #33b5e5;
 */
-    font-size: 4rem;
+    font-size: 3.5rem;
     box-shadow: 6px 6px 10px black inset;
     background-image:linear-gradient(to right, green, #1f1f84, purple, red, orange);
     opacity: .8;
@@ -429,15 +429,17 @@ h2{
 /****************** contact *******************/
 
 .h1 small {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: white;
+    font-style: italic;
 }
 
 /*************** page inscription *****************/
 
 h1 small{
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: white;
+    font-style: italic;
 }
 
 /************** mon compte ***************/
