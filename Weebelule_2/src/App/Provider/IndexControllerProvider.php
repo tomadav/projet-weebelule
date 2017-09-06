@@ -32,14 +32,20 @@ class IndexControllerProvider implements ControllerProviderInterface {
               # En option je peux donner un nom à la route, qui servira plus tard
               # pour la créations de lien : "controller_action"
               ->bind('weebelule_contact');
-          # Page de contact
+
+              // # transmission des données à la BDD
+              // $controllers
+              //   ->post('/contact2','App\Controller\IndexController::contact2Action')
+              //   ->bind('weebelule_contact_post');
+
+          # Page FAQ
           $controllers
               # On associe une Route à un Controller et une Action
               ->get('/faq', 'App\Controller\IndexController::faqAction')
               # En option je peux donner un nom à la route, qui servira plus tard
               # pour la créations de lien : "controller_action"
               ->bind('weebelule_faq');
-          # Page de contact
+          # Page de Mentions Légales
           $controllers
               # On associe une Route à un Controller et une Action
               ->get('/mentions', 'App\Controller\IndexController::mentionsAction')
@@ -55,6 +61,7 @@ class IndexControllerProvider implements ControllerProviderInterface {
                 # pour la créations de lien : "controller_action"
                 ->bind('weebelule_inscription');
 
+                # transmission des données à la BDD
                 $controllers
                   ->post('/inscription','App\Controller\IndexController::inscriptionPost')
                   ->bind('weebelule_inscription_post');
@@ -95,6 +102,7 @@ class IndexControllerProvider implements ControllerProviderInterface {
             ->post('/annoncePost', 'App\Controller\IndexController::annoncePostAction')
             # En option je peux donner un nom à la route, qui servira plus tard
             # pour la créations de lien : "controller_action"
+            # transmission à la BDD
             ->bind('weebelule_annonce_post');
 
 

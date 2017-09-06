@@ -194,11 +194,12 @@ class IndexController
 
             # Affectation des valeurs
             $annonce->TITREANNONCE        =  $request->get('TITREANNONCE');
-            $annonce->IDSCATEGORIE         =  $request->get('IDSCATEGORIE');
+            $annonce->IDCATEGORIE         =  $request->get('IDCATEGORIE');
+            $annonce->IDSCATEGORIE        =  $request->get('IDSCATEGORIE');
             $annonce->VALEURANNONCE       =  $request->get('VALEURANNONCE');
             $annonce->CONTENUANNONCE      =  $request->get('CONTENUANNONCE');
 
-            # On persiste en BDD
+              # On persiste en BDD
             $annonce->save();
 
             # On envoie un email de confirmation ou de bienvenue
@@ -206,7 +207,7 @@ class IndexController
             # ...
 
             # On redirige l'utilisateur sur la page de connexion
-            return $app->redirect('connexion?inscription=success');
+            return $app->redirect('annonce?publication=success');
         }
     /**
     * Affichage des catégories dans le menu
