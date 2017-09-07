@@ -5,11 +5,10 @@
 
 {# Block de Contenu défini dans base.html.twig #}
 {% block contenu %}
-
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <h3 class="text-center">Bonjour {{ app.user.PRENOMUSER }}</h3>
+    {% else %}
         <div class="container">
-            <div class="starter-template">
-                <p class="lead">Use this document as a way to quickly start any new project.</p>
-            </div>
 
             <div class="row">
                 <div class="col-xs-6 col-xs-push-3">
@@ -50,7 +49,7 @@
                     </form>
                 </div>
             </div>
-
+{% endif %}
 
             <div class="btn btn-success">
               <a href="{{ url('weebelule_annonce') }}">Publies ton Annonce !</a>

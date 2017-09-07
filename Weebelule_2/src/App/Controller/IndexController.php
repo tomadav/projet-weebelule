@@ -12,6 +12,18 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 
 class IndexController
 {
+
+   public function message (Application $app , Request $request, Swift_Message $message) {
+      $message = Swift_Message::newInstance()
+          ->setSubject('[weebelule] Feedback')
+          ->setFrom(array('bensahlataletyoussef@gmail.com'))
+          ->setTo(array('feedback@weebelule.com'))
+          ->setBody($request->get('message'));
+
+      $app['mailer']->send($message);
+
+      return $app['twig']->render('contact2.html.twig');
+  }
     /**
      * Affichage de la Page d'Accueil
      * @return Symfony\Component\HttpFoundation\Response;
@@ -157,6 +169,83 @@ class IndexController
 
 
     /**
+        * Affichage de la Page Connexion
+        * @return Symfony\Component\HttpFoundation\Response;
+        */
+       public function connexionAction(Application $app, Request $request) {
+         $form = $app['form.factory']->createBuilder(FormType::class)
+         ->add('EMAILUSER', EmailType::class, [
+             'required'      =>  true,
+             'label'         =>  false,
+             'constraints'   =>  array(new NotBlank()),
+             'attr'          =>  [
+                 'class'         => 'form-control',
+                 'placeholder'   => 'Saisissez votre email',
+                 'autocomplete'  => 'new-password'
+               ]
+         ])
+         ->add('MDPUSER', PasswordType::class, [
+             'required'      =>  true,
+             'label'         =>  false,
+             'constraints'   =>  array(new NotBlank()),
+             'attr'          =>  [
+                 'class'         => 'form-control',
+                 'placeholder'   => '***',
+                 'autocomplete'  => 'new-password'
+             ]
+         ])
+         ->add('submit', SubmitType::class, [
+             'label'     => 'Connexion',
+             'attr'      =>  [
+                 'class'     => 'btn btn-block btn-primary'
+             ]
+         ])
+         ->getForm();
+
+         $form->handleRequest($request);
+
+         if($form->isValid()) :
+
+             $user = $form->getData();
+
+             $isMailInDb = $app['idiorm.db']->for_table('user')
+             ->where(array(
+                 'EMAILUSER'     => $user['EMAILUSER'],
+                 'MDPUSER'  => $app['security.encoder.digest']->encodePassword($user['MDPUSER'], '')
+                 ))
+             ->find_one();
+                   if(!$isMailInDb) :
+
+                   return $app['twig']->render('connexion.html.twig', [
+                     'form'      => $form->createView(),
+                     'error'     => 'Identifiant et/ou mot de passe incorrect !'
+                   ]);
+                   // return print_r($isMailInDb);
+                   else :
+                     return $app['twig']->render('connected.html.twig',[
+                       'form'    => $form->createView(),
+                       'error'   => ''
+                     ]);
+
+                   endif;
+
+
+         endif;
+
+         return $app['twig']->render('connexion.html.twig', [
+             'form'      => $form->createView(),
+             'error'     => '',
+             'last_username' => $app['session']->get('_security.last_username')
+         ]);
+       }
+
+       public function deconnexionAction(Application $app, Request $request){
+         # On vide la session de l'utilisateur
+         $app['session']->clear();
+         # On le redirige sur l'url de notre choix
+         return $app['twig']->render('deconnexion.html.twig') ;
+       }
+    /**
      * Affichage de la Page de connexion
      */
     public function categorieAction(Application $app) {
@@ -188,13 +277,13 @@ class IndexController
 
             # Vérification et Sécurisation des données POST
             # ...
-
+            if($request->get('IDSCATEGORIE') == 10 ) $cat=1;
             # Connexion à la Base de Données
             $annonce = $app['idiorm.db']->for_table('annonce')->create();
 
             # Affectation des valeurs
             $annonce->TITREANNONCE        =  $request->get('TITREANNONCE');
-            $annonce->IDCATEGORIE         =  $request->get('IDCATEGORIE');
+            $annonce->IDCATEGORIE         =  $cat;
             $annonce->IDSCATEGORIE        =  $request->get('IDSCATEGORIE');
             $annonce->VALEURANNONCE       =  $request->get('VALEURANNONCE');
             $annonce->CONTENUANNONCE      =  $request->get('CONTENUANNONCE');

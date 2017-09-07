@@ -33,10 +33,10 @@ class IndexControllerProvider implements ControllerProviderInterface {
               # pour la créations de lien : "controller_action"
               ->bind('weebelule_contact');
 
-              // # transmission des données à la BDD
-              // $controllers
-              //   ->post('/contact2','App\Controller\IndexController::contact2Action')
-              //   ->bind('weebelule_contact_post');
+              # transmission des données à la BDD
+              $controllers
+                ->post('/contact2','App\Controller\IndexController::message')
+                ->bind('weebelule_contact_post');
 
           # Page FAQ
           $controllers
@@ -65,6 +65,11 @@ class IndexControllerProvider implements ControllerProviderInterface {
                 $controllers
                   ->post('/inscription','App\Controller\IndexController::inscriptionPost')
                   ->bind('weebelule_inscription_post');
+
+
+                  $controllers
+                    ->match('/connexion','App\Controller\IndexController::connexionAction')
+                    ->bind('weebelule_connexion');
 
 
           $controllers
